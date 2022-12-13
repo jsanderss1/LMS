@@ -26,6 +26,9 @@ public class App extends JFrame {
     private JTextField textField1;
     private JPanel publisherPanel;
     private JTextField textField2;
+    private JScrollPane authorScrollPanel;
+    private JTable authorTable;
+    private JButton addButton1;
 
     public App() {
 
