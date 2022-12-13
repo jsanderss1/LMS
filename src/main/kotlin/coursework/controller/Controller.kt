@@ -1,41 +1,51 @@
+/*
 package coursework.controller
 
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.sqlite.driver.asJdbcDriver
 import com.zaxxer.hikari.HikariDataSource
-//import coursework.database.Database
-//import coursework.database.FACULTY
-//import coursework.database.LECTURER
-//import coursework.model.DDBB
+import coursework.database.Database
+import coursework.database.Authors
+import coursework.database.Publishers
+import coursework.database.Books
+import coursework.model.DDBB
 import java.beans.PropertyChangeListener
 import java.beans.PropertyChangeSupport
 
 object Controller {
 
-    val path = "src/main/resources/LibBase.sqlite"
+    val path = "src/main/resources/Libbase.sqlite"
 
- /*   private val pcs = PropertyChangeSupport(this)
+    private val pcs = PropertyChangeSupport(this)
 
-    var lecturerList: List<LECTURER> = getLecturers()
+    var booksList: List<Books> = getBooks()
         get() = field
         private set(value) {
             val old = field
             field = value
-            pcs.firePropertyChange("lecturerList", old, field)
+            pcs.firePropertyChange("booksList", old, field)
         }
 
-    var facultyList: List<FACULTY> = getFaculties()
+    var authorsList: List<Authors> = getAuthors()
         get() = field
         private set(value) {
             val old = field
             field = value
-            pcs.firePropertyChange("facultyList", old, field)
+            pcs.firePropertyChange("authorsList", old, field)
         }
 
-    private fun getLecturers(): List<LECTURER> {
+    var publishersList: List<Publishers> = getPublishers()
+        get() = field
+        private set(value) {
+            val old = field
+            field = value
+            pcs.firePropertyChange("publishersList", old, field)
+        }
+
+    private fun getBooks(): List<Books> {
         val database = Database(getSqlDriver(path))
         val sqlQueries = database.cWQueries
-        return sqlQueries.allLecturers().executeAsList()
+        return sqlQueries.allBooks().executeAsList()
     }
 
     private fun getSqlDriver(path: String ): SqlDriver {
@@ -47,25 +57,38 @@ object Controller {
         return ds.asJdbcDriver()
     }
 
-    fun add_lecturer(name: String, age: Long, status: String, gender: String, faculty: Long?=null) {
+    fun add_books(Title: String, AuthorID: Long, Year: Long, PublisherID: Long, Subject: String, Authors: Long?=null, Publishers: Long?=null) {
         val database = Database(getSqlDriver(path))
         val sqlQueries = database.cWQueries
-        sqlQueries.insertLecturer(name,age,status,gender,faculty)
-        lecturerList = getLecturers()
+        sqlQueries.insertBooks(Title,AuthorID,Year,PublisherID,Subject)
+        booksList = getBooks()
     }
 
-    private fun getFaculties(): List<FACULTY> {
+    private fun getAuthors(): List<Authors> {
         val database = Database(getSqlDriver(path))
-        val facultyQueries = database.cWQueries
-        return facultyQueries.allFaculties().executeAsList()
+        val authorsQueries = database.cWQueries
+        return authorsQueries.allAuthors().executeAsList()
+    }
+
+    private fun getPublishers(): List<Publishers> {
+        val database = Database(getSqlDriver(path))
+        val publishersQueries = database.cWQueries
+        return publishersQueries.allPublishers().executeAsList()
     }
 
 
-    fun addFaculty(name: String) {
+    fun addAuthors(name: String, surname: String) {
         val database = Database(getSqlDriver(path))
         val sqlQueries = database.cWQueries
-        sqlQueries.insertFaculty(name)
-        facultyList = getFaculties()
+        sqlQueries.insertAuthors(name,surname)
+        authorsList = getAuthors()
+    }
+
+    fun addPublishers(name: String) {
+        val database = Database(getSqlDriver(path))
+        val sqlQueries = database.cWQueries
+        sqlQueries.insertPublishers(name)
+        publishersList = getPublishers()
     }
 
 
@@ -81,11 +104,12 @@ object Controller {
 }
 
 fun main() {
-    Controller.lecturerList.forEach { it ->
+    Controller.booksList.forEach { it ->
         println(it)
     }
-    Controller.add_lecturer("RAFITA",18,"married","male",null)
-    Controller.lecturerList.forEach { it ->
+    Controller.add_books("RAFITA",18,"married","male",null)
+    Controller.booksList.forEach { it ->
         println(it)
-    }*/
+    }
 }
+controller*/

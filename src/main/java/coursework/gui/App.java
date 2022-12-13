@@ -54,5 +54,10 @@ public class App extends JFrame {
         bookTable = new JTable(new DefaultTableModel(cols, 0));
         scrollPanel = new JScrollPane(bookTable);
     }
+    private void test() {
+        Object[] cols = {"ID", "Title", "AuthorID", "Year", "PublisherID", "Subject"};
+        bookTable = new JTable(new DefaultTableModel(cols, 0));
+        scrollPanel = new JScrollPane(bookTable);
+    }
 
 }

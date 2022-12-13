@@ -22,6 +22,12 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/src/main/sql/ddl.sql" connection-id="48a25138-1b34-43ec-be1b-e6197f117ccf" session-id="MAIN" current-schema="main" />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
@@ -43,7 +49,7 @@
           <port value="" />
           <database value="" />
           <files>
-            <file path="C:\Users\Wallpa\Desktop\LibManagementSys\src\main\resources\Libbase.sqlite" schema="main" />
+            <file path="C:\Users\Wallpa\Desktop\LMS\src\main\resources\Libbase.sqlite" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
