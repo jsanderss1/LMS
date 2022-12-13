@@ -372,7 +372,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="a5cf1" class="javax.swing.JTable">
+                  <component id="a5cf1" class="javax.swing.JTable" binding="publisherTable">
                     <constraints/>
                     <properties/>
                   </component>

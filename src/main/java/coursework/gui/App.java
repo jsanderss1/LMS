@@ -29,6 +29,7 @@ public class App extends JFrame {
     private JScrollPane authorScrollPanel;
     private JTable authorTable;
     private JButton addButton1;
+    private JTable publisherTable;
 
     public App() {
 
