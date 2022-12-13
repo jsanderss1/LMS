@@ -1,3 +1,4 @@
+/*
 
 class BubbleSort
 {
@@ -16,7 +17,9 @@ class BubbleSort
                 }
     }
 
-    /* Prints the array */
+    */
+/* Prints the array *//*
+
     void printArray(String arr[])
     {
         int n = arr.length;
@@ -39,4 +42,4 @@ class BubbleSort
         //String s2="1hello";
         //System.out.println(s1.compareTo(s2));
     }
-}
+}*/

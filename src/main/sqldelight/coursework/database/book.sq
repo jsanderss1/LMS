@@ -1,0 +1,67 @@
+CREATE TABLE Books (
+BookID INTEGER PRIMARY KEY AUTOINCREMENT,
+Title TEXT NOT NULL,
+AuthorID INTEGER,
+Year INTEGER NOT NULL,
+PublisherID INTEGER,
+Subject TEXT NOT NULL,
+FOREIGN KEY(AuthorID) REFERENCES Authors(ID),
+FOREIGN KEY(PublisherID) REFERENCES Publishers(ID)
+);
+
+allBooks:
+SELECT *
+FROM Books;
+
+CREATE TABLE Authors (
+ ID INTEGER PRIMARY KEY AUTOINCREMENT,
+ Name TEXT NOT NULL,
+ Surname TEXT NOT NULL
+);
+
+CREATE TABLE Publishers (
+ ID INTEGER PRIMARY KEY AUTOINCREMENT,
+ Name TEXT NOT NULL
+);
+
+--drop table Books
+--drop table Authors
+--drop table Publishers
+
+allAuthors:
+SELECT *
+FROM Authors;
+
+allPublishers:
+SELECT *
+FROM Publishers;
+
+
+insertBooks:
+INSERT INTO Books ( Title, AuthorID, Year, PublisherID, Subject) VALUES ( ?, ?, ?, ?,?);
+
+insertAuthors:
+INSERT INTO Authors (Name, Surname) VALUES (?,?);
+
+insertAuthors:
+INSERT INTO Publishers (Name) VALUES (?);
+
+book_by_Author:
+SELECT
+    Books.Title,
+    Books.Year,
+    Books.Subject
+FROM Books
+INNER JOIN Authors
+ON Books.AuthorID = Authors.ID
+WHERE Books.AuthorID = ?;
+
+book_by_Publisher:
+SELECT
+    Books.Title,
+    Books.Year,
+    Books.Subject
+FROM Books
+INNER JOIN Publishers
+ON Books.PublisherID = Publishers.ID
+WHERE Books.PublisherID = ?;

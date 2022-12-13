@@ -1,5 +1,7 @@
+package coursework.gui;
+
 import javax.swing.*;
-public class Main {
+public class Run {
     public static void main(String[] args) {
 
         try {
@@ -15,7 +17,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ManagementPanel panelShow= new ManagementPanel();
+                App panelShow = new App();
                 panelShow.setVisible(true);
             }
         });
